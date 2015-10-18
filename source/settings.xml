@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"   
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">  
+            
+  <!-- <localRepository>D:\bisoft\tools\maven3\repository</localRepository>  -->
+  
+  <pluginGroups>  
+    <pluginGroup>org.mortbay.jetty</pluginGroup>  
+    <!-- <pluginGroup>org.codehaus.cargo</pluginGroup>   -->
+  </pluginGroups>
+  
+  <proxies>  
+  </proxies>  
+  
+  <servers>  
+    <server>  
+        <id>releases</id>  
+        <username>deployment</username>  
+        <password>deployment123</password>  
+    </server>  
+    <server>  
+        <id>snapshots</id>  
+        <username>deployment</username>  
+        <password>deployment123</password>  
+    </server>    
+  </servers>  
+  
+  <mirrors>  
+    <mirror>
+      <id>nexus</id>  
+      <mirrorOf>*</mirrorOf>  
+      <url>http://192.168.1.3:9081/nexus/content/groups/public</url>  
+    </mirror>  
+	<mirror>  
+      <id>nexus-oschina</id>  
+      <mirrorOf>*</mirrorOf>  
+      <url>http://192.168.1.3:9081/nexus/content/repositories/oschina</url>  
+    </mirror>
+	<mirror>  
+      <id>nexus-ibiblio</id>  
+      <mirrorOf>*</mirrorOf>  
+      <url>http://192.168.1.3:9081/nexus/content/repositories/ibiblio</url>  
+    </mirror>
+  </mirrors>  
+  
+  <profiles>    
+    <profile>  
+        <id>nexus</id>  
+        <repositories>  
+          <repository>  
+            <id>nexus</id>  
+            <name>Nexus</name>  
+            <url>http://192.168.1.3:9081/nexus/content/groups/public/</url>  
+            <releases><enabled>true</enabled></releases>  
+            <snapshots><enabled>true</enabled></snapshots>  
+          </repository>  
+        </repositories>  
+        <pluginRepositories>  
+          <pluginRepository>  
+            <id>nexus</id>  
+            <name>Nexus</name>  
+            <url>http://192.168.1.3:9081/nexus/content/groups/public/</url>  
+            <releases><enabled>true</enabled></releases>  
+            <snapshots><enabled>true</enabled></snapshots>  
+          </pluginRepository>  
+        </pluginRepositories>  
+    </profile>  
+   </profiles>    
+  
+  <activeProfiles>  
+    <activeProfile>nexus</activeProfile>  
+  </activeProfiles>  
+</settings>  
+  
+</settings>
